@@ -10,17 +10,19 @@ public class MyTestingClass {
 
     @Override
     public int hashCode() {
-        int result = attribute1;
+        int result = 17;
+        result = 31 * result + attribute1;
         result = 31 * result + attribute2;
         return result;
     }
 
 
+
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        MyTestingClass that = (MyTestingClass) o;
-        return attribute1 == that.attribute1 && attribute2 == that.attribute2;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        MyTestingClass other = (MyTestingClass) obj;
+        return attribute1 == other.attribute1 && attribute2 == other.attribute2;
     }
 }
