@@ -3,13 +3,13 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         MyHashTable<MyTestingClass, Integer> table = new MyHashTable<>();
-        int totalElements = 0;
+
 
         Random random = new Random();
         for (int i = 0; i < 10000; i++) {
             MyTestingClass key = new MyTestingClass(random.nextInt(1000), random.nextInt(1000));
             table.put(key, i);
-            totalElements++;
+
         }
 
         MyHashTable.HashNode<MyTestingClass, Integer>[] chainArray = table.getChainArray();
@@ -23,6 +23,5 @@ public class Main {
             System.out.println("Bucket " + i + ": " + count + " elements");
         }
 
-        System.out.println("Total elements: " + totalElements);
     }
 }
