@@ -51,7 +51,6 @@ public class MyHashTable<K,V> {
             }
             node = node.next;
         }
-        // Если ключ не найден, добавляем новый элемент в начало цепочки
         chainArray[index] = new HashNode<>(key, value, chainArray[index]);
         size++;
     }
@@ -70,7 +69,6 @@ public class MyHashTable<K,V> {
 
 
 
-    // Геттер для chainArray
     public HashNode<K,V>[] getChainArray() {
         return chainArray;
     }
